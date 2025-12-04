@@ -5,7 +5,7 @@ This directory contains files under different licenses:
 ## CC0 1.0 Universal (Public Domain Dedication)
 
 The following file is dedicated to the public domain under CC0 1.0:
-- commit-workflow.mdrules
+- commit-workflow.mdc
 
 To the extent possible under law, the author has waived all copyright and
 related or neighboring rights to this work.
@@ -17,12 +17,11 @@ CC0 1.0 Universal: https://creativecommons.org/publicdomain/zero/1.0/
 ## MIT License
 
 The following files are licensed under the MIT License:
-- auto-code-review.mdrules
-- auto-documentation.mdrules
-- auto-gitignore.mdrules
-- commit-formatter.mdrules
-- project-manager.mdrules
-- test-generator.mdrules
+- commit-message-format.mdc
+- pr-message-format.mdc
+- prompt-injection-guard.mdc
+- test-strategy.mdc
+- v5.mdc
 
 Copyright (c) 2025 Yuichiro Kinoshita
 

@@ -6,18 +6,17 @@
 
 ### オリジナル
 
-- `commit-workflow.mdrules` - Gitコミットワークフロー専用ルール
+- `commit-workflow.mdc` - Gitコミットワークフロー専用ルール
 
 ### 外部ソース
 
 以下のルールは [kinopeee/cursorrules](https://github.com/kinopeee/cursorrules) から取得したものです (2025-12-05時点):
 
-- `auto-code-review.mdrules` - 自動コードレビュー
-- `auto-documentation.mdrules` - 自動ドキュメント生成
-- `auto-gitignore.mdrules` - 自動.gitignore管理
-- `commit-formatter.mdrules` - コミットメッセージフォーマッター
-- `project-manager.mdrules` - プロジェクト管理
-- `test-generator.mdrules` - テスト生成
+- `commit-message-format.mdc` - コミットメッセージフォーマット
+- `pr-message-format.mdc` - PRメッセージフォーマット
+- `prompt-injection-guard.mdc` - プロンプトインジェクション保護
+- `test-strategy.mdc` - テスト戦略
+- `v5.mdc` - Cursor Rules v5
 
 ## 使い方
 
@@ -26,16 +25,15 @@
 ## ライセンス
 
 ### オリジナルルール (CC0 1.0)
-- `commit-workflow.mdrules` は CC0 1.0 Universal (パブリックドメイン) の下で提供されています
+- `commit-workflow.mdc` は CC0 1.0 Universal (パブリックドメイン) の下で提供されています
 
 ### 外部ソースルール (MIT License)
 以下のファイルは MIT License の下で提供されています:
-- `auto-code-review.mdrules`
-- `auto-documentation.mdrules`
-- `auto-gitignore.mdrules`
-- `commit-formatter.mdrules`
-- `project-manager.mdrules`
-- `test-generator.mdrules`
+- `commit-message-format.mdc`
+- `pr-message-format.mdc`
+- `prompt-injection-guard.mdc`
+- `test-strategy.mdc`
+- `v5.mdc`
 
 ```
 MIT License
