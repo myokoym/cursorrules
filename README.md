@@ -25,10 +25,10 @@
 
 ## ライセンス
 
-### オリジナルルール
-- `commit-workflow.mdrules` はこのプロジェクトのライセンスに従います
+### オリジナルルール (CC0 1.0)
+- `commit-workflow.mdrules` は CC0 1.0 Universal (パブリックドメイン) の下で提供されています
 
-### 外部ソースルール
+### 外部ソースルール (MIT License)
 以下のファイルは MIT License の下で提供されています:
 - `auto-code-review.mdrules`
 - `auto-documentation.mdrules`
