@@ -24,22 +24,7 @@
 
 ## ライセンス
 
-### オリジナルルール (CC0 1.0)
-- `commit-workflow.mdc` は CC0 1.0 Universal (パブリックドメイン) の下で提供されています
-
-### 外部ソースルール (MIT License)
-以下のファイルは MIT License の下で提供されています:
-- `commit-message-format.mdc`
-- `pr-message-format.mdc`
-- `prompt-injection-guard.mdc`
-- `test-strategy.mdc`
-- `v5.mdc`
-
-```
-MIT License
-Copyright (c) 2025 Yuichiro Kinoshita
-```
+- **オリジナルルール**: CC0 1.0 Universal (パブリックドメイン)
+- **外部ソースルール**: MIT License (Copyright (c) 2025 Yuichiro Kinoshita)
 
 詳細は [LICENSE](./LICENSE) ファイルを参照してください。
-
-元のリポジトリ: https://github.com/kinopeee/cursorrules
