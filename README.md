@@ -25,5 +25,23 @@
 
 ## ライセンス
 
-- オリジナルルール: このプロジェクトのライセンスに従います
-- 外部ソースルール: 各ソースのライセンスに従います
+### オリジナルルール
+- `commit-workflow.mdrules` はこのプロジェクトのライセンスに従います
+
+### 外部ソースルール
+以下のファイルは MIT License の下で提供されています:
+- `auto-code-review.mdrules`
+- `auto-documentation.mdrules`
+- `auto-gitignore.mdrules`
+- `commit-formatter.mdrules`
+- `project-manager.mdrules`
+- `test-generator.mdrules`
+
+```
+MIT License
+Copyright (c) 2025 Yuichiro Kinoshita
+```
+
+詳細は [LICENSE](./LICENSE) ファイルを参照してください。
+
+元のリポジトリ: https://github.com/kinopeee/cursorrules
