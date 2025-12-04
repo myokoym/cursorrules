@@ -10,7 +10,7 @@
 
 ### 外部ソース
 
-以下のルールは [kinopeee/cursorrules](https://github.com/kinopeee/cursorrules) から取得したものです:
+以下のルールは [kinopeee/cursorrules](https://github.com/kinopeee/cursorrules) から取得したものです (2025-12-05時点):
 
 - `auto-code-review.mdrules` - 自動コードレビュー
 - `auto-documentation.mdrules` - 自動ドキュメント生成
