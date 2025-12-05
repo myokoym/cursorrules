@@ -8,6 +8,7 @@
 
 - `commit-workflow.mdc` - Gitコミットワークフロー専用ルール
 - `problem-reporting.mdc` - 実装中の問題発見時の報告プロセス
+- `existing-project-extension.mdc` - 既存プロジェクトへの機能追加ルール
 
 ### 外部ソース
 
