@@ -7,6 +7,7 @@
 ### オリジナル
 
 - `commit-workflow.mdc` - Gitコミットワークフロー専用ルール
+- `problem-reporting.mdc` - 実装中の問題発見時の報告プロセス
 
 ### 外部ソース
 
