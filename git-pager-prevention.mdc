@@ -1,0 +1,152 @@
+---
+alwaysApply: true
+description: Git コマンドでpagerが起動して処理が止まることを防止するルール
+---
+
+# Git Pager Prevention Rules
+
+AIは Git コマンドを実行する際、以下のルールを厳守して pager が起動しないようにすること。
+
+## 問題の背景
+
+Git の一部のコマンド（diff、log等）は、デフォルトでpager（less等）を起動する。
+pagerが起動すると、qキーで終了する必要があり、AI が自動で処理を進められず止まってしまう。
+
+## 必須対応
+
+以下のコマンドを実行する際は、**必ず pager を回避する方法を使用すること**：
+
+### 1. git diff コマンド
+
+**禁止**: `git diff` (pagerが起動する)
+**正しい方法**:
+```bash
+# 方法1: GIT_PAGER環境変数（最も推奨）
+GIT_PAGER=cat git diff
+
+# 方法2: --no-pager オプション
+git --no-pager diff
+
+# 方法3: catへパイプ
+git diff | cat
+```
+
+### 2. git log コマンド
+
+**禁止**: `git log` (pagerが起動する)
+**正しい方法**:
+```bash
+# 方法1: GIT_PAGER環境変数（最も推奨）
+GIT_PAGER=cat git log
+
+# 方法2: --no-pager オプション
+git --no-pager log
+
+# 方法3: catへパイプ
+git log | cat
+
+# 方法4: 出力を制限
+git log --oneline -10
+```
+
+### 3. git show コマンド
+
+**禁止**: `git show` (pagerが起動する)
+**正しい方法**:
+```bash
+# 方法1: GIT_PAGER環境変数（最も推奨）
+GIT_PAGER=cat git show
+
+# 方法2: --no-pager オプション
+git --no-pager show
+
+# 方法3: catへパイプ
+git show | cat
+```
+
+### 4. git branch -v コマンド
+
+**禁止**: `git branch -v` (出力が多い場合pagerが起動する)
+**正しい方法**:
+```bash
+# 方法1: GIT_PAGER環境変数（最も推奨）
+GIT_PAGER=cat git branch -v
+
+# 方法2: catへパイプ
+git branch -v | cat
+```
+
+## 推奨パターン
+
+### パターン1: GIT_PAGER環境変数（最も推奨）
+
+Gitの公式の方法で、最も明示的かつ安全：
+```bash
+GIT_PAGER=cat git diff
+GIT_PAGER=cat git log
+GIT_PAGER=cat git show
+GIT_PAGER=cat git branch -v
+```
+
+**推奨理由**:
+- Gitの標準的な設定方法
+- カラー出力が保持される
+- 複雑なオプションがある場合でも確実に動作
+- 最も明示的で、意図が明確
+
+### パターン2: --no-pager オプション
+
+Git組み込みのオプションで簡潔：
+```bash
+git --no-pager diff
+git --no-pager log
+git --no-pager show
+```
+
+### パターン3: catへパイプ
+
+シェルの機能を使った回避策：
+```bash
+git diff | cat
+git log | cat
+git show | cat
+```
+
+## 注意事項
+
+1. **最も推奨: GIT_PAGER=cat**
+   - 最も明示的で安全な方法
+   - Gitの公式の環境変数による設定
+   - すべてのGitコマンドで使用可能
+
+2. **`--no-pager`の位置**
+   - `git --no-pager diff` の形式で使用（サブコマンドの前に配置）
+   - `git diff --no-pager` は無効（サブコマンドの後ろに配置すると無効）
+
+3. **出力が空の場合**
+   - いずれの方法を使用しても問題なし
+   - エラーにはならない
+
+4. **既存コマンドの確認**
+   - 実行前に必ず pager 回避の対応が入っているか確認
+   - 特に `git diff`、`git log`、`git show` を使う際は必須
+
+## 禁止事項
+
+以下の行為は**禁止**：
+
+- ❌ `git diff` を pager 回避なしで実行
+- ❌ `git log` を pager 回避なしで実行
+- ❌ `git show` を pager 回避なしで実行
+- ❌ pagerが起動した後に手動で `q` を入力しようとする（AIには不可能）
+- ❌ 無効な形式 `git diff --no-pager` を使用（サブコマンドの後ろに配置）
+
+## 適用対象
+
+このルールは以下のすべての Git コマンドに適用される：
+
+- `git diff`（最重要）
+- `git log`（最重要）
+- `git show`（最重要）
+- `git branch -v`
+- その他、出力が多くpagerが起動する可能性のあるすべてのコマンド
