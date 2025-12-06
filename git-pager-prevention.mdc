@@ -5,12 +5,12 @@ description: Git コマンドでpagerが起動して処理が止まることを�
 
 # Git Pager Prevention Rules
 
-AIは Git コマンドを実行する際、以下のルールを厳守して pager が起動しないようにすること。
+AI が Git コマンドを実行する際は、**原則として常に `GIT_PAGER=cat` または `git --no-pager` を付与すること**。
 
 ## 問題の背景
 
-Git の一部のコマンド（diff、log等）は、デフォルトでpager（less等）を起動する。
-pagerが起動すると、qキーで終了する必要があり、AI が自動で処理を進められず止まってしまう。
+Git の一部のコマンド（diff、log等）は、デフォルトで pager（less等）を起動する。
+pager が起動すると、`q` キーで終了させる必要があり、AI が自動で処理を進められず止まってしまう。
 
 ## 必須対応
 
@@ -45,8 +45,9 @@ git --no-pager log
 # 方法3: catへパイプ
 git log | cat
 
-# 方法4: 出力を制限
-git log --oneline -10
+# 補助的なオプション: 出力を制限（必ず方法1〜3と併用すること）
+# ※ これ単体では pager 回避を保証できない
+git --no-pager log --oneline -10
 ```
 
 ### 3. git show コマンド
@@ -72,7 +73,10 @@ git show | cat
 # 方法1: GIT_PAGER環境変数（最も推奨）
 GIT_PAGER=cat git branch -v
 
-# 方法2: catへパイプ
+# 方法2: --no-pager オプション
+git --no-pager branch -v
+
+# 方法3: catへパイプ
 git branch -v | cat
 ```
 
@@ -101,6 +105,7 @@ Git組み込みのオプションで簡潔：
 git --no-pager diff
 git --no-pager log
 git --no-pager show
+git --no-pager branch -v
 ```
 
 ### パターン3: catへパイプ
@@ -110,6 +115,7 @@ git --no-pager show
 git diff | cat
 git log | cat
 git show | cat
+git branch -v | cat
 ```
 
 ## 注意事項
@@ -130,6 +136,10 @@ git show | cat
 4. **既存コマンドの確認**
    - 実行前に必ず pager 回避の対応が入っているか確認
    - 特に `git diff`、`git log`、`git show` を使う際は必須
+
+5. **出力制限オプションの扱い**
+   - `--oneline -10` 等の出力制限は、単独では pager 回避を保証しない
+   - 必ず `GIT_PAGER=cat` または `git --no-pager` と併用すること
 
 ## 禁止事項
 
