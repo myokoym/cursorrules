@@ -9,6 +9,7 @@
 - `commit-workflow.mdc` - Gitコミットワークフロー専用ルール
 - `problem-reporting.mdc` - 実装中の問題発見時の報告プロセス
 - `existing-project-extension.mdc` - 既存プロジェクトへの機能追加ルール
+- `command-creation-proposal.mdc` - 繰り返し行う操作をコマンド化することを提案するルール
 
 ### 外部ソース
 
